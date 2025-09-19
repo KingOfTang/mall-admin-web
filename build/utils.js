@@ -99,3 +99,10 @@ exports.createNotifierCallback = () => {
     })
   }
 }
+// 这段代码是一个Webpack配置工具模块，主要功能包括：
+//
+// 1. **路径处理**：`assetsPath`根据环境返回静态资源路径。
+// 2. **CSS加载器配置**：`cssLoaders`生成各类CSS预处理器的loader配置。
+// 3. **样式文件加载器**：`styleLoaders`为独立样式文件生成webpack module规则。
+// 4. **错误通知**：`createNotifierCallback`在编译出错时弹出系统通知。
+//

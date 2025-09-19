@@ -46,7 +46,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -143,3 +143,13 @@ if (config.build.bundleAnalyzerReport) {
 }
 
 module.exports = webpackConfig
+
+// 这段代码是用于生产环境的Webpack配置文件，主要功能包括：
+//
+// 1. **代码压缩与优化**：使用`UglifyJsPlugin`压缩JS，`OptimizeCSSPlugin`优化CSS。
+// 2. **资源提取**：通过`ExtractTextPlugin`将CSS提取为独立文件。
+// 3. **HTML生成**：利用`HtmlWebpackPlugin`生成带hash的HTML文件。
+// 4. **模块分割**：使用`CommonsChunkPlugin`分离vendor和manifest代码。
+// 5. **静态资源拷贝**：通过`CopyWebpackPlugin`复制静态文件。
+// 6. **环境变量定义**：使用`DefinePlugin`注入生产环境变量。
+// 7. **可选功能**：支持Gzip压缩和bundle分析报告。

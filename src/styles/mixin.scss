@@ -1,27 +1,26 @@
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
+@mixin clearfix { // 清除浮动混合器
+  &:after { // after伪元素
+    content: ""; // 内容为空
+    display: table; // 显示为表格
+    clear: both; // 清除两侧浮动
   }
 }
 
-@mixin scrollBar {
-  &::-webkit-scrollbar-track-piece {
-    background: #d3dce6;
+@mixin scrollBar { // 滚动条样式混合器
+  &::-webkit-scrollbar-track-piece { // 滚动条轨道
+    background: #d3dce6; // 背景色
   }
-  &::-webkit-scrollbar {
-    width: 6px;
+  &::-webkit-scrollbar { // 滚动条
+    width: 6px; // 宽度为6px
   }
-  &::-webkit-scrollbar-thumb {
-    background: #99a9bf;
-    border-radius: 20px;
+  &::-webkit-scrollbar-thumb { // 滚动条滑块
+    background: #99a9bf; // 背景色
+    border-radius: 20px; // 圆角
   }
 }
 
-@mixin relative {
-  position: relative;
-  width: 100%;
-  height: 100%;
+@mixin relative { // 相对定位混合器
+  position: relative; // 相对定位
+  width: 100%; // 宽度100%
+  height: 100%; // 高度100%
 }
-

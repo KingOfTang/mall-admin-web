@@ -7,3 +7,11 @@ indent_size = 2
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+# 这段EditorConfig代码用于统一项目中的代码格式规范：
+#
+# - `root = true`：标识这是项目的根配置文件
+# - `[*]`：匹配所有文件
+#    - 统一设置：UTF-8编码、2个空格缩进、LF换行符、自动删除行尾空格、文件末尾保留空行
+#
+#    确保团队协作时代码风格一致。

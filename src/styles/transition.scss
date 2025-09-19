@@ -1,32 +1,32 @@
-//globl transition css
+// 全局过渡动画CSS
 
-/*fade*/
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.28s;
+/* fade过渡效果 */
+.fade-enter-active, // fade进入激活状态
+.fade-leave-active { // fade离开激活状态
+  transition: opacity 0.28s; // 透明度过渡0.28秒
 }
 
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
+.fade-enter, // fade进入开始状态
+.fade-leave-active { // fade离开激活状态
+  opacity: 0; // 透明度为0
 }
 
-/*fade*/
-.breadcrumb-enter-active,
-.breadcrumb-leave-active {
-  transition: all .5s;
+/* 面包屑过渡效果 */
+.breadcrumb-enter-active, // 面包屑进入激活状态
+.breadcrumb-leave-active { // 面包屑离开激活状态
+  transition: all .5s; // 所有属性过渡0.5秒
 }
 
-.breadcrumb-enter,
-.breadcrumb-leave-active {
-  opacity: 0;
-  transform: translateX(20px);
+.breadcrumb-enter, // 面包屑进入开始状态
+.breadcrumb-leave-active { // 面包屑离开激活状态
+  opacity: 0; // 透明度为0
+  transform: translateX(20px); // 水平向右移动20px
 }
 
-.breadcrumb-move {
-  transition: all .5s;
+.breadcrumb-move { // 面包屑移动状态
+  transition: all .5s; // 所有属性过渡0.5秒
 }
 
-.breadcrumb-leave-active {
-  position: absolute;
+.breadcrumb-leave-active { // 面包屑离开激活状态
+  position: absolute; // 绝对定位
 }

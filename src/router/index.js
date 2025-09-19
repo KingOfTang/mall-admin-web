@@ -1,42 +1,87 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+/**
+ * 安装Vue Router插件
+ *
+ * 该函数用于将Vue Router插件注册到Vue实例中，使Vue应用具备路由功能
+ *
+ * @param {Object} Router - Vue Router插件对象，包含install方法用于插件注册
+ *
+ * @returns {void} 无返回值
+ *
+ * @example
+ * Vue.use(Router)
+ */
 Vue.use(Router)
 
+
 /* Layout */
+/**
+ * 导入布局组件模块
+ *
+ * 该模块用于导入应用程序的主布局组件，通常包含页面的基本结构框架，
+ * 如头部、侧边栏、主要内容区域等布局元素。
+ *
+ * @module Layout
+ * @example
+ * // 在路由配置中使用布局组件
+ * import Layout from '../views/layout/Layout'
+ *
+ * const routes = [
+ *   {
+ *     path: '/',
+ *     component: Layout,
+ *     children: [...]
+ *   }
+ * ]
+ */
 import Layout from '../views/layout/Layout'
 
-/**
- * hidden: true                   if `hidden:true` will not show in the sidebar(default is false)
- * alwaysShow: true               if set true, will always show the root menu, whatever its child routes length
- *                                if not set alwaysShow, only more than one route under the children
- *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noredirect           if `redirect:noredirect` will no redirct in the breadcrumb
- * name:'router-name'             the name is used by <keep-alive> (must set!!!)
- * meta : {
-    title: 'title'               the name show in submenu and breadcrumb (recommend set)
-    icon: 'svg-name'             the icon show in the sidebar,
-  }
- **/
+
+
 export const constantRouterMap = [
+  // 登录路由配置：定义登录页面的路由路径和组件
+  // path: '/login' - 设置路由路径为/login
+  // component: () => import('@/views/login/index') - 使用动态导入方式按需加载登录页面组件
+  // hidden: true - 在侧边栏菜单中隐藏该路由项
   {path: '/login', component: () => import('@/views/login/index'), hidden: true},
+
+  // 404错误页面路由配置：定义找不到页面时的错误处理路由
+  // path: '/404' - 设置路由路径为/404
+  // component: () => import('@/views/404') - 使用动态导入方式按需加载404页面组件
+  // hidden: true - 在侧边栏菜单中隐藏该路由项
   {path: '/404', component: () => import('@/views/404'), hidden: true},
   {
+    // 根路径路由，匹配空路径
     path: '',
+    // 使用Layout布局组件作为根组件
     component: Layout,
+    // 重定向到/home路径
     redirect: '/home',
+    // 路由元信息，设置菜单标题和图标
     meta: {title: '首页', icon: 'home'},
+    // 子路由配置
     children: [{
+      // 子路由路径为home
       path: 'home',
+      // 路由名称，用于<keep-alive>缓存组件
       name: 'home',
+      // 动态导入首页内容组件
       component: () => import('@/views/home/index'),
+      // 子路由元信息，设置子菜单标题和图标
       meta: {title: '仪表盘', icon: 'dashboard'}
     },
+
     {
+      // 路由名称，用于标识该路由
       name: 'document',
+      // 外部链接路径，指向学习教程网站
       path: 'https://www.macrozheng.com',
+      // 路由元信息，设置菜单项的标题和图标
       meta: {title: '学习教程', icon: 'document'}
     },
+
     {
       name: 'video',
       path: 'https://www.macrozheng.com/mall/foreword/mall_video.html',
@@ -48,23 +93,39 @@ export const constantRouterMap = [
 
 export const asyncRouterMap = [
   {
+    // 商品管理模块的根路由路径
     path: '/pms',
+    // 使用Layout布局组件作为根组件
     component: Layout,
+    // 默认重定向到商品列表页面
     redirect: '/pms/product',
+    // 路由名称，用于标识该路由模块
     name: 'pms',
+    // 路由元信息，设置在侧边栏显示的标题和图标
     meta: {title: '商品', icon: 'product'},
+
     children: [{
+      // 子路由路径，对应商品列表页面
       path: 'product',
+      // 路由名称，用于标识该路由
       name: 'product',
+      // 动态导入商品列表页面组件
       component: () => import('@/views/pms/product/index'),
+      // 路由元信息，设置页面标题和图标
       meta: {title: '商品列表', icon: 'product-list'}
     },
+
       {
+        // 子路由路径，用于添加商品功能
         path: 'addProduct',
+        // 路由名称，用于标识该路由
         name: 'addProduct',
+        // 动态导入添加商品页面组件
         component: () => import('@/views/pms/product/add'),
+        // 路由元信息，设置页面标题和图标
         meta: {title: '添加商品', icon: 'product-add'}
       },
+
       {
         path: 'updateProduct',
         name: 'updateProduct',
@@ -373,9 +434,27 @@ export const asyncRouterMap = [
   {path: '*', redirect: '/404', hidden: true}
 ]
 
+/**
+ * 创建并导出一个Vue Router实例
+ * 该路由器配置了基本的路由行为和路由映射表
+ *
+ * @returns {Router} 返回配置好的Vue Router实例
+ */
+
 export default new Router({
   // mode: 'history', //后端支持可开
+  /**
+   * 控制路由切换时的滚动行为
+   * 每次路由切换后将页面滚动到顶部
+   *
+   * @returns {Object} 返回滚动位置对象，设置y轴位置为0
+   */
   scrollBehavior: () => ({y: 0}),
+  /**
+   * 路由配置映射表
+   * 包含应用中所有预定义的路由规则
+   */
   routes: constantRouterMap
 })
+
 

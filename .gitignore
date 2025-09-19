@@ -12,3 +12,11 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+
+#这段 `.gitignore` 文件用于指定 Git 版本控制中需要忽略的文件和目录：
+#
+#- 忽略 macOS 系统的 `.DS_Store` 文件
+#- 忽略 Node.js 项目的 `node_modules/` 依赖目录和构建输出的 `/dist/` 目录
+#- 忽略 npm 和 yarn 的调试日志文件
+#- 忽略各种编辑器（如 IDEA、VS Code、Visual Studio）的配置文件和项目文件

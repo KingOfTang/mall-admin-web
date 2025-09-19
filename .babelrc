@@ -10,3 +10,15 @@
   ],
   "plugins": ["transform-vue-jsx", "transform-runtime"]
 }
+
+
+//这段JSON是Babel编译器的配置文件，用于JavaScript代码转换：
+//
+//- **presets**: 预设配置
+//- `env`: 环境预设，设置目标浏览器兼容性（>1%市场份额、最新2个版本、排除IE8及以下）
+//- `stage-2`: 启用TC39提案第二阶段的JavaScript特性
+//- **plugins**: 插件配置
+//- `transform-vue-jsx`: 支持Vue的JSX语法转换
+//- `transform-runtime`: 优化编译后的代码运行时性能
+//
+//整体功能是将现代JavaScript代码转换为兼容目标浏览器的代码。

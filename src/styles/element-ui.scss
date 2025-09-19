@@ -1,29 +1,29 @@
- //to reset element-ui default css
-.el-upload {
-  input[type="file"] {
-    display: none !important;
+ // 重置element-ui默认CSS样式
+.el-upload { // 针对上传组件
+  input[type="file"] { // 隐藏文件输入框
+    display: none !important; // 使用important确保样式覆盖
   }
 }
 
-.el-upload__input {
-  display: none;
+.el-upload__input { // 针对上传输入框
+  display: none; // 隐藏输入框
 }
 
-//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
-.el-dialog {
-  transform: none;
-  left: 0;
-  position: relative;
-  margin: 0 auto;
+// 暂时性解决dialog问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog { // 针对对话框组件
+  transform: none; // 移除变换效果
+  left: 0; // 左边距为0
+  position: relative; // 设置相对定位
+  margin: 0 auto; // 水平居中
 }
 
-//element ui upload
-.upload-container {
-  .el-upload {
-    width: 100%;
-    .el-upload-dragger {
-      width: 100%;
-      height: 200px;
+// element ui 上传组件样式定制
+.upload-container { // 上传容器
+  .el-upload { // 上传组件
+    width: 100%; // 宽度100%
+    .el-upload-dragger { // 拖拽上传区域
+      width: 100%; // 宽度100%
+      height: 200px; // 高度200px
     }
   }
 }

@@ -89,3 +89,11 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
+// 这段代码是 Webpack 的配置文件，用于打包 Vue.js 项目。主要功能包括：
+//
+// 1. **入口与输出**：指定入口文件 `main.js` 和输出路径、文件名。
+// 2. **模块解析**：设置别名（如 [@](file://F:\baiducloud\mall-swarm-web\mall-admin-web\config\prod.env.js#L1-L5) 指向 `src`）和可省略的扩展名。
+// 3. **加载器规则**：针对 `.vue`、`.js`、图片、字体等资源使用不同 loader 处理。
+// 4. **环境区分**：根据生产/开发环境设置不同的 `publicPath`。
+// 5. **Node.js 兼容**：防止注入无用的 Node.js 模块 polyfill。

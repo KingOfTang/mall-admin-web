@@ -1,105 +1,105 @@
-#app {
+#app { // 针对app根元素
 
   // 主体区域
-  .main-container {
-    min-height: 100%;
-    transition: margin-left .28s;
-    margin-left: 180px;
+  .main-container { // 主容器
+    min-height: 100%; // 最小高度100%
+    transition: margin-left .28s; // 左边距过渡动画0.28秒
+    margin-left: 180px; // 左边距180px
   }
 
    // 侧边栏
-  .sidebar-container {
-    .horizontal-collapse-transition {
-      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+  .sidebar-container { // 侧边栏容器
+    .horizontal-collapse-transition { // 水平折叠过渡效果
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out; // 无过渡时间的宽度和内边距变化
     }
-    transition: width .28s;
-    width: 180px !important;
-    height: 100%;
-    position: fixed;
-    font-size: 0px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1001;
-    overflow: hidden;
-    a {
-      display: inline-block;
-      width: 100%;
+    transition: width .28s; // 宽度过渡动画0.28秒
+    width: 180px !important; // 宽度180px
+    height: 100%; // 高度100%
+    position: fixed; // 固定定位
+    font-size: 0px; // 字体大小0px
+    top: 0; // 顶部对齐
+    bottom: 0; // 底部对齐
+    left: 0; // 左侧对齐
+    z-index: 1001; // 层级1001
+    overflow: hidden; // 隐藏溢出内容
+    a { // 链接元素
+      display: inline-block; // 行内块显示
+      width: 100%; // 宽度100%
     }
-    .svg-icon {
-      margin-right: 16px;
+    .svg-icon { // SVG图标
+      margin-right: 16px; // 右边距16px
     }
-    .el-menu {
-      border: none;
-      width: 100% !important;
-    }
-  }
-
-  .hideSidebar {
-    .sidebar-container {
-      width: 36px !important;
-    }
-    .main-container {
-      margin-left: 36px;
-    }
-    .submenu-title-noDropdown {
-      padding-left: 10px !important;
-      position: relative;
-      .el-tooltip {
-        padding: 0 10px !important;
-      }
-    }
-    .el-submenu {
-      &>.el-submenu__title {
-        padding-left: 10px !important;
-        &>span {
-          height: 0;
-          width: 0;
-          overflow: hidden;
-          visibility: hidden;
-          display: inline-block;
-        }
-        .el-submenu__icon-arrow {
-          display: none;
-        }
-      }
+    .el-menu { // element菜单
+      border: none; // 无边框
+      width: 100% !important; // 宽度100%
     }
   }
 
-  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
-  .sidebar-container .el-submenu .el-menu-item {
-    min-width: 180px !important;
-    background-color: $subMenuBg !important;
-    &:hover {
-      background-color: $menuHover !important;
+  .hideSidebar { // 隐藏侧边栏状态
+    .sidebar-container { // 侧边栏容器
+      width: 36px !important; // 宽度36px
+    }
+    .main-container { // 主容器
+      margin-left: 36px; // 左边距36px
+    }
+    .submenu-title-noDropdown { // 无下拉菜单的子菜单标题
+      padding-left: 10px !important; // 左内边距10px
+      position: relative; // 相对定位
+      .el-tooltip { // 提示框
+        padding: 0 10px !important; // 左右内边距10px
+      }
+    }
+    .el-submenu { // element子菜单
+      &>.el-submenu__title { // 子菜单标题
+        padding-left: 10px !important; // 左内边距10px
+        &>span { // 标题中的span元素
+          height: 0; // 高度0
+          width: 0; // 宽度0
+          overflow: hidden; // 隐藏溢出
+          visibility: hidden; // 隐藏可见性
+          display: inline-block; // 行内块显示
+        }
+        .el-submenu__icon-arrow { // 子菜单箭头图标
+          display: none; // 不显示
+        }
+      }
     }
   }
-  .el-menu--collapse .el-menu .el-submenu {
-    min-width: 180px !important;
+
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title, // 嵌套菜单的子菜单标题
+  .sidebar-container .el-submenu .el-menu-item { // 侧边栏子菜单的菜单项
+    min-width: 180px !important; // 最小宽度180px
+    background-color: $subMenuBg !important; // 背景色使用变量
+    &:hover { // 悬停状态
+      background-color: $menuHover !important; // 悬停背景色使用变量
+    }
+  }
+  .el-menu--collapse .el-menu .el-submenu { // 折叠菜单中的子菜单
+    min-width: 180px !important; // 最小宽度180px
   }
 
   //适配移动端
-  .mobile {
-    .main-container {
-      margin-left: 0px;
+  .mobile { // 移动端样式
+    .main-container { // 主容器
+      margin-left: 0px; // 左边距0px
     }
-    .sidebar-container {
-      top: 50px;
-      transition: transform .28s;
-      width: 180px !important;
+    .sidebar-container { // 侧边栏容器
+      top: 50px; // 距离顶部50px
+      transition: transform .28s; // 变换过渡动画0.28秒
+      width: 180px !important; // 宽度180px
     }
-    &.hideSidebar {
-      .sidebar-container {
-        transition-duration: 0.3s;
-        transform: translate3d(-180px, 0, 0);
+    &.hideSidebar { // 隐藏侧边栏状态
+      .sidebar-container { // 侧边栏容器
+        transition-duration: 0.3s; // 过渡时间0.3秒
+        transform: translate3d(-180px, 0, 0); // 3D变换向左移动180px
       }
     }
   }
 
-  .withoutAnimation {
-    .main-container,
-    .sidebar-container {
-      transition: none;
+  .withoutAnimation { // 无动画状态
+    .main-container, // 主容器
+    .sidebar-container { // 侧边栏容器
+      transition: none; // 无过渡效果
     }
   }
 }

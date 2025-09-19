@@ -81,3 +81,15 @@ src -- 源码目录
 [Apache License 2.0](https://github.com/macrozheng/mall-admin-web/blob/master/LICENSE)
 
 Copyright (c) 2018-2024 macrozheng
+
+
+package.json
+
+这是一个Vue.js前端项目的`package.json`配置文件，定义了项目基本信息、依赖包、开发脚本和构建配置。主要功能包括：
+
+- **项目信息**：名称、版本、描述、作者等
+- **运行脚本**：开发服务器启动、项目构建命令
+- **依赖管理**：生产环境和开发环境所需npm包
+- **构建配置**：webpack相关工具和插件
+- **环境要求**：指定Node.js和npm最低版本
+- **浏览器兼容**：定义目标浏览器范围

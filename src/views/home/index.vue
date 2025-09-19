@@ -2,14 +2,18 @@
   <div class="app-container">
     <div class="address-layout">
       <el-row :gutter="20">
+        <!-- 学习教程展示区域 -->
         <el-col :span="6">
           <div class="out-border">
+            <!-- 区块标题 -->
             <div class="layout-title">学习教程</div>
+            <!-- 教程链接内容 -->
             <div class="color-main address-content">
               <a href="https://www.macrozheng.com" target="_blank">mall学习教程</a>
             </div>
           </div>
         </el-col>
+
         <el-col :span="6">
           <div class="out-border">
             <div class="layout-title">视频教程</div>
@@ -440,3 +444,9 @@
     font-size: 18px
   }
 </style>
+
+
+<!--这段Vue模板代码实现了一个电商管理系统的首页，-->
+<!--包含学习资源链接、销售数据统计、待处理事务、商品与用户概览及订单统计图表等功能模块。-->
+<!--通过Element UI组件库进行布局和展示，并使用`ve-line`组件绘制订单数量与金额的折线图。-->
+<!--数据部分模拟了后端返回的订单信息，并支持按日期筛选展示。-->

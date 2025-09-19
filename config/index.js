@@ -67,3 +67,10 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   }
 }
+
+// 这段代码是Vue.js项目的配置文件，分为开发环境（dev）和生产环境（build）两部分。主要功能包括：
+//
+// 1. **dev**：配置开发服务器的端口、代理、源映射等，便于调试和开发。
+// 2. **build**：定义打包输出路径、是否启用gzip压缩、生成分析报告等，用于项目构建。
+//
+// 通过`module.exports`导出配置对象供Webpack使用。

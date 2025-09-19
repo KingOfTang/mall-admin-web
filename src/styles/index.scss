@@ -1,158 +1,157 @@
-@import './variables.scss';
-@import './mixin.scss';
-@import './transition.scss';
-@import './element-ui.scss';
-@import './sidebar.scss';
+@import './variables.scss'; // 导入变量样式文件
+@import './mixin.scss'; // 导入混合样式文件
+@import './transition.scss'; // 导入过渡动画样式文件
+@import './element-ui.scss'; // 导入element-ui样式文件
+@import './sidebar.scss'; // 导入侧边栏样式文件
 
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+body { // 针对body元素
+  -moz-osx-font-smoothing: grayscale; // Firefox字体平滑
+  -webkit-font-smoothing: antialiased; // Webkit字体平滑
+  text-rendering: optimizeLegibility; // 优化文本渲染
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; // 设置字体族
 }
 
-html {
-  box-sizing: border-box;
+html { // 针对html元素
+  box-sizing: border-box; // 设置盒模型为border-box
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+*, // 针对所有元素
+*:before, // 针对所有元素的before伪元素
+*:after { // 针对所有元素的after伪元素
+  box-sizing: inherit; // 继承父元素的盒模型
 }
 
-div:focus{
-  outline: none;
+div:focus{ // 针对div获得焦点时
+  outline: none; // 移除轮廓线
 }
 
-a:focus,
-a:active {
-  outline: none;
+a:focus, // 针对a标签获得焦点时
+a:active { // 针对a标签激活时
+  outline: none; // 移除轮廓线
 }
 
-a,
-a:focus,
-a:hover {
-  cursor: pointer;
-  color: inherit;
-  text-decoration: none;
+a, // 针对a标签
+a:focus, // 针对a标签获得焦点时
+a:hover { // 针对a标签悬停时
+  cursor: pointer; // 设置光标为指针
+  color: inherit; // 继承父元素颜色
+  text-decoration: none; // 移除文本装饰
 }
 
-.clearfix {
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
+.clearfix { // 清除浮动样式
+  &:after { // after伪元素
+    visibility: hidden; // 隐藏元素
+    display: block; // 设置为块级元素
+    font-size: 0; // 字体大小为0
+    content: " "; // 内容为空格
+    clear: both; // 清除两侧浮动
+    height: 0; // 高度为0
   }
 }
 
-//main-container全局样式
-.app-main{
-  min-height: 100%
+// main-container全局样式
+.app-main{ // 应用主容器
+  min-height: 100% // 最小高度为100%
 }
 
-.app-container {
-  padding: 20px;
+.app-container { // 应用容器
+  padding: 20px; // 内边距为20px
 }
 
-//搜索栏样式
-.filter-container {
+// 搜索栏样式
+.filter-container { // 搜索容器
 
 }
 
-//操作栏样式
-.operate-container {
-  margin-top: 20px;
+// 操作栏样式
+.operate-container { // 操作容器
+  margin-top: 20px; // 上边距为20px
 }
 
-.operate-container .btn-add {
-  float: right;
+.operate-container .btn-add { // 操作容器中的添加按钮
+  float: right; // 浮动到右侧
 }
 
-//表格栏样式
-.table-container {
-  margin-top: 20px;
+// 表格栏样式
+.table-container { // 表格容器
+  margin-top: 20px; // 上边距为20px
 }
 
-//批量操作栏样式
-.batch-operate-container {
-  display: inline-block;
-  margin-top: 20px;
+// 批量操作栏样式
+.batch-operate-container { // 批量操作容器
+  display: inline-block; // 设置为行内块元素
+  margin-top: 20px; // 上边距为20px
 }
 
-//分页栏样式
-.pagination-container {
-  display: inline-block;
-  float: right;
-  margin-top: 20px;
+// 分页栏样式
+.pagination-container { // 分页容器
+  display: inline-block; // 设置为行内块元素
+  float: right; // 浮动到右侧
+  margin-top: 20px; // 上边距为20px
 }
 
-//添加、更新表单样式
-.form-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 720px;
-  padding: 35px 35px 15px 35px;
-  margin: 20px auto;
+// 添加、更新表单样式
+.form-container { // 表单容器
+  position: absolute; // 绝对定位
+  left: 0; // 左边距为0
+  right: 0; // 右边距为0
+  width: 720px; // 宽度为720px
+  padding: 35px 35px 15px 35px; // 内边距
+  margin: 20px auto; // 外边距居中
 }
 
-//主标题
-.font-extra-large {
-  font-size: 20px;
-  color: #303133;
+// 主标题
+.font-extra-large { // 超大字体
+  font-size: 20px; // 字体大小为20px
+  color: #303133; // 字体颜色
 }
 
-//标题
-.font-title-large {
-  font-size: 18px;
-  color: #303133;
+// 标题
+.font-title-large { // 大标题字体
+  font-size: 18px; // 字体大小为18px
+  color: #303133; // 字体颜色
 }
 
-//小标题
-.font-title-medium {
-  font-size: 16px;
-  color: #303133;
+// 小标题
+.font-title-medium { // 中等标题字体
+  font-size: 16px; // 字体大小为16px
+  color: #303133; // 字体颜色
 }
 
-//正文
-.font-medium {
-  font-size: 16px;
-  color: #606266;
+// 正文
+.font-medium { // 中等正文字体
+  font-size: 16px; // 字体大小为16px
+  color: #606266; // 字体颜色
 }
 
-//正文
-.font-small {
-  font-size: 14px;
-  color: #606266;
+// 正文
+.font-small { // 小正文字体
+  font-size: 14px; // 字体大小为14px
+  color: #606266; // 字体颜色
 }
 
-//正文（小）
-.font-extra-small {
-  font-size: 13px;
-  color: #606266;
+// 正文（小）
+.font-extra-small { // 超小正文字体
+  font-size: 13px; // 字体大小为13px
+  color: #606266; // 字体颜色
 }
 
-.color-main {
-  color: #409EFF;
+.color-main { // 主要颜色
+  color: #409EFF; // 蓝色
 }
 
-.color-success {
-  color: #67C23A;
+.color-success { // 成功颜色
+  color: #67C23A; // 绿色
 }
 
-.color-warning {
-  color: #E6A23C;
+.color-warning { // 警告颜色
+  color: #E6A23C; // 橙色
 }
 
-.color-danger {
-  color: #F56C6C;
+.color-danger { // 危险颜色
+  color: #F56C6C; // 红色
 }
 
-.color-info {
-  color: #909399;
+.color-info { // 信息颜色
+  color: #909399; // 灰色
 }
-

@@ -93,3 +93,11 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
+
+// 这段代码是 Webpack 的开发环境配置文件，主要功能包括：
+//
+// 1. **合并基础配置**：通过 `webpack-merge` 合并基础配置 `webpack.base.conf.js`。
+// 2. **开发服务器设置**：配置 `devServer` 实现热更新、代理、错误覆盖等功能。
+// 3. **插件加载**：使用 `HtmlWebpackPlugin` 生成 HTML，`CopyWebpackPlugin` 复制静态资源等。
+// 4. **端口自动查找**：利用 `portfinder` 自动获取可用端口并启动服务。
+// 5. **友好错误提示**：通过 `FriendlyErrorsPlugin` 提供更友好的编译错误信息。
