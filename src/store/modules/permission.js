@@ -82,20 +82,20 @@ const permission = {
         const { username } = data; // 获取用户名
         const accessedRouters = asyncRouterMap.filter(v => { // 过滤异步路由
           // admin帐号直接返回所有菜单
-          // if(username==='admin') return true;
-          if (hasPermission(menus, v)) { // 判断是否有权限访问路由
-            if (v.children && v.children.length > 0) { // 如果有子路由
-              v.children = v.children.filter(child => { // 过滤子路由
-                if (hasPermission(menus, child)) { // 判断子路由是否有权限
-                  return child; // 返回有权限的子路由
-                }
-                return false; // 返回无权限的子路由
-              });
-              return v; // 返回有权限的路由
-            } else {
-              return v; // 返回没有子路由的路由
-            }
-          }
+          if(username==='admin') return true;
+          // if (hasPermission(menus, v)) { // 判断是否有权限访问路由
+          //   if (v.children && v.children.length > 0) { // 如果有子路由
+          //     v.children = v.children.filter(child => { // 过滤子路由
+          //       if (hasPermission(menus, child)) { // 判断子路由是否有权限
+          //         return child; // 返回有权限的子路由
+          //       }
+          //       return false; // 返回无权限的子路由
+          //     });
+          //     return v; // 返回有权限的路由
+          //   } else {
+          //     return v; // 返回没有子路由的路由
+          //   }
+          // }
           return false; // 返回无权限的路由
         });
         // 对菜单进行排序
