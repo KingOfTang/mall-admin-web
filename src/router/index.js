@@ -431,6 +431,22 @@ export const asyncRouterMap = [
       }
     ]
   },
+// 新增技术栈模块路由（与pms同级）
+  {
+    path: '/techStack',
+    component: Layout,
+    redirect: '/techStack/index',
+    name: 'TechStack',
+    meta: { title: '技术栈展示', icon: 'el-icon-code' },
+    children: [
+      {
+        path: 'index',
+        name: 'TechStackList',
+        component: () => import('@/views/techStack/index'),
+        meta: { title: '技术栈列表', icon: 'el-icon-code' }
+      }
+    ]
+  },
   {path: '*', redirect: '/404', hidden: true}
 ]
 
